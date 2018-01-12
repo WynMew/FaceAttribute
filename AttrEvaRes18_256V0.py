@@ -27,7 +27,7 @@ model.cuda()
 checkpoint = torch.load('AttrPreResNet18Det256V0_MSEloss.pth.tar', map_location=lambda storage, loc: storage)
 model.load_state_dict(checkpoint['state_dict'])
 
-with open("/home/miaoqianwen/FaceAttr/celebATest") as lmfile:
+with open("celebATest") as lmfile:
     lineNum=sum(1 for _ in lmfile)
 
 it=iter(range(1, lineNum))
@@ -39,7 +39,7 @@ SmilingCounter = 0
 YoungCounter = 0
 diff=0
 for m in it:
-    line = lc.getline("/home/miaoqianwen/FaceAttr/celebATest", m)
+    line = lc.getline("celebATest", m)
     line = line.rstrip('\n')
     file = line.split(' ')
     ImgName = file[0]

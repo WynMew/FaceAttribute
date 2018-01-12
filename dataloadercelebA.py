@@ -109,12 +109,11 @@ for i_batch, sample_batched in enumerate(dataloader):
     if i_batch == 1:
         break
 
-agedataset = MyDataSet("celebATrain")
-for i in range(1, len(agedataset)):
+testdataset = MyDataSet("celebATrain")
+for i in range(1, len(testdataset)):
     fig = plt.figure()
     sample = agedataset[i]
     print(i, sample['image'].shape)
-    #print(sample['affine'])
     ax = fig.add_subplot(1,1,1)
     ax.imshow(sample['image'])
     plt.show()

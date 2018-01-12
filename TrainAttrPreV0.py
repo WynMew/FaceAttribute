@@ -138,19 +138,8 @@ optimizer = optim.SGD(model.parameters(), lr= init_lr, momentum=0.5)
 loss = nn.MSELoss()
 best_test_loss = float("inf")
 print('Starting training...')
-resume = 0
 start_epoch = 1
 end_epoch = 20
-if resume:
-    checkpoint = torch.load('/home/miaoqianwen/HDD6/FaceAlignment/MyPoseNet/WebFaceAffineRegression3b1Mynet_MSEloss.pth.tar',
-                            map_location=lambda storage, loc: storage)
-    #checkpoint = torch.load('/home/miaoqianwen/HDD6/FaceAlignment/CNNGeometricPytorch/trained_models/best_pascal_checkpoint_adam_affine_grid_loss.pth.tar', map_location=lambda storage, loc: storage)
-    model.load_state_dict(checkpoint['state_dict'])
-    #model.parameters
-    start_epoch = checkpoint['epoch']
-    best_test_loss = checkpoint['best_test_loss']
-    optimizer.load_state_dict(checkpoint['optimizer'])
-
 
 for epoch in range(start_epoch, end_epoch + 1):
     train_loss = train(epoch, model, loss, optimizer, dataLoaderTrain,  log_interval=10)

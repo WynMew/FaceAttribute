@@ -18,13 +18,13 @@ from torch.optim import lr_scheduler
 from sklearn.metrics import mutual_info_score
 import math
 
-datasetTrain = MyDataSet(filelist ='/home/miaoqianwen/FaceAttr/celebATrain',
+datasetTrain = MyDataSet(filelist ='celebATrain',
             transform=transforms.Compose([
                 ToTensorDict(),
                 NormalizeImageDict(['image'])
             ]))
 dataLoaderTrain = data.DataLoader(datasetTrain, batch_size=50, shuffle=True, num_workers=1)
-datasetTest = MyDataSet(filelist ='/home/miaoqianwen/FaceAttr/celebAVal',
+datasetTest = MyDataSet(filelist ='celebAVal',
             transform=transforms.Compose([
                 ToTensorDict(),
                 NormalizeImageDict(['image'])

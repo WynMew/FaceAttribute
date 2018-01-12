@@ -96,7 +96,7 @@ class ToTensorDict(object):
 
 
 """
-transformed_dataset = MyDataSet(filelist ='/home/miaoqianwen/FaceAttr/celebATrain',
+transformed_dataset = MyDataSet(filelist ='celebATrain',
                                 transform=transforms.Compose([
                                     ToTensorDict(),
                                     NormalizeImageDict(['image'])
@@ -109,7 +109,7 @@ for i_batch, sample_batched in enumerate(dataloader):
     if i_batch == 1:
         break
 
-agedataset = MyDataSet("/home/HDD4/Database/imdbAge/imdbmtcnnlist")
+agedataset = MyDataSet("celebATrain")
 for i in range(1, len(agedataset)):
     fig = plt.figure()
     sample = agedataset[i]

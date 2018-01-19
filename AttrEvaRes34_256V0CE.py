@@ -42,7 +42,7 @@ SmilingCounter = 0
 YoungCounter = 0
 diff=0
 for m in it:
-    line = lc.getline("/home/miaoqianwen/FaceAttr/celebATest", m)
+    line = lc.getline("celebATest", m)
     line = line.rstrip('\n')
     file = line.split(' ')
     ImgName = file[0]

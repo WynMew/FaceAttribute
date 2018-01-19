@@ -19,13 +19,13 @@ from dataloadercelebACE import *
 from AttrPreModelRes34_256V0CE import *
 from FocalLoss import *
 
-datasetTrain = MyDataSet(filelist ='/home/miaoqianwen/FaceAttr/celebATrain',
+datasetTrain = MyDataSet(filelist ='celebATrain',
             transform=transforms.Compose([
                 ToTensorDict(),
                 NormalizeImageDict(['image'])
             ]))
 dataLoaderTrain = data.DataLoader(datasetTrain, batch_size=50, shuffle=True, num_workers=1)
-datasetTest = MyDataSet(filelist ='/home/miaoqianwen/FaceAttr/celebAVal',
+datasetTest = MyDataSet(filelist ='celebAVal',
             transform=transforms.Compose([
                 ToTensorDict(),
                 NormalizeImageDict(['image'])
@@ -169,18 +169,8 @@ optimizer = optim.SGD(model.parameters(), lr= init_lr, momentum=0.5)
 loss = FocalLoss(gamma=2)
 best_test_loss = float("inf")
 print('Starting training...')
-resume = 0
 start_epoch = 1
 end_epoch = 30
-if resume:
-    checkpoint = torch.load('/home/miaoqianwen/HDD6/FaceAlignment/MyPoseNet/WebFaceAffineRegression3b1Mynet_MSEloss.pth.tar',
-                            map_location=lambda storage, loc: storage)
-    #checkpoint = torch.load('/home/miaoqianwen/HDD6/FaceAlignment/CNNGeometricPytorch/trained_models/best_pascal_checkpoint_adam_affine_grid_loss.pth.tar', map_location=lambda storage, loc: storage)
-    model.load_state_dict(checkpoint['state_dict'])
-    #model.parameters
-    start_epoch = checkpoint['epoch']
-    best_test_loss = checkpoint['best_test_loss']
-    optimizer.load_state_dict(checkpoint['optimizer'])
 
 
 for epoch in range(start_epoch, end_epoch + 1):

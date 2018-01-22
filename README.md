@@ -34,3 +34,18 @@ AttrPreModelRes34_256V0.py
 AttrEvaRes18_256V0.py
 
 AttrEvaRes34_256V0.py
+
+### Results
+Focal Loss:
+
+Attractive 0.820
+
+EyeGlasses 0.997
+
+Male  0.969
+  
+MouthOpen  0.938
+  
+Smiling   0.915
+
+Young   0.871

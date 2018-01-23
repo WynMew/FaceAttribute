@@ -38,14 +38,14 @@ AttrEvaRes34_256V0.py
 ### Results
 Focal Loss:
 
-Attractive 0.8236
+Attractive 0.8231
 
-EyeGlasses 0.9972
+EyeGlasses 0.9980
 
-Male  0.9704
+Male  0.9721
   
-MouthOpen  0.9394
+MouthOpen  0.9407
   
-Smiling   0.9176
+Smiling   0.9200
 
-Young   0.8731
+Young   0.8776

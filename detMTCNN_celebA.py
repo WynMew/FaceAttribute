@@ -3,7 +3,7 @@
 
 # import _init_paths
 import os, sys
-sys.path.append("/home/miaoqianwen/caffe/python")
+sys.path.append("/home/usr/caffe/python")
 import caffe
 import cv2
 import numpy as np
@@ -505,7 +505,7 @@ def detect_face(img, minsize, PNet, RNet, ONet, threshold, fastresize, factor, s
 
 def initFaceDetector():
     minsize = 20
-    caffe_model_path = "/home/duino/iactive/mtcnn/model"
+    caffe_model_path = "/home/model"
     threshold = [0.6, 0.7, 0.7]
     factor = 0.709
     caffe.set_mode_cpu()
@@ -544,7 +544,7 @@ def main():
     minsize = 20
     threshold = [0.6, 0.7, 0.7]
     factor = 0.709
-    caffe_model_path = '/home/miaoqianwen/caffe/models/detection'
+    caffe_model_path = '/home/usr/models/detection'
     PNet = caffe.Net(caffe_model_path + "/det1.prototxt", caffe_model_path + "/det1.caffemodel", caffe.TEST)
     RNet = caffe.Net(caffe_model_path + "/det2.prototxt", caffe_model_path + "/det2.caffemodel", caffe.TEST)
     ONet = caffe.Net(caffe_model_path + "/det3.prototxt", caffe_model_path + "/det3.caffemodel", caffe.TEST)
